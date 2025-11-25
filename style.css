@@ -1,11 +1,11 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f6f6f6;
+    background: wheat;
 }
 
 header {
-    background: #222;
+    background: black;
     color: white;
     padding: 20px;
     display: flex;
@@ -13,7 +13,7 @@ header {
 }
 
 header nav a {
-    color: #fff;
+    color: whitesmoke;
     margin-left: 20px;
     text-decoration: none;
 }
@@ -24,7 +24,7 @@ header nav a {
     padding: 20px;
 }
 
-.grid {
+.lista {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 25px;
@@ -37,7 +37,7 @@ header nav a {
     background: white;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px wheat;
     position: relative;
     text-align: center;
     display: flex;
@@ -64,7 +64,7 @@ header nav a {
 
 button {
     border: none;
-    background: #0073ff;
+    background: blue;
     color: white;
     padding: 10px;
     border-radius: 8px;
@@ -73,7 +73,7 @@ button {
 }
 
 button:hover {
-    background: #005fcc;
+    background: blue;
 }
 
 .price {

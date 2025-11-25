@@ -1,6 +1,3 @@
-/* ===========================
-   GLOBAL
-=========================== */
 let products = [];
 let filteredProducts = [];
 
@@ -10,9 +7,7 @@ let favourites = JSON.parse(localStorage.getItem("favourites") || "[]");
 let currentPage = 1;
 const perPage = 8;
 
-/* ===========================
-   DOM
-=========================== */
+
 const productList = document.getElementById("productList");
 const cartList = document.getElementById("cartList");
 const favList = document.getElementById("favList");
@@ -28,9 +23,6 @@ const nextPage = document.getElementById("nextPage");
 const pageInfo = document.getElementById("pageInfo");
 
 
-/* ===========================
-   LOAD PRODUCTS
-=========================== */
 async function loadProducts() {
     const res = await fetch("https://dummyjson.com/products?limit=100");
     const data = await res.json();
@@ -47,9 +39,6 @@ async function loadProducts() {
 }
 
 
-/* ===========================
-   CATEGORIES
-=========================== */
 function populateCategories() {
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(cat => {
@@ -61,9 +50,6 @@ function populateCategories() {
 }
 
 
-/* ===========================
-   FILTERS + SEARCH
-=========================== */
 function applyFilters() {
     let list = [...products];
 
@@ -82,9 +68,6 @@ function applyFilters() {
 }
 
 
-/* ===========================
-   RENDER HOME
-=========================== */
 function renderProducts() {
     productList.innerHTML = "";
 
@@ -121,9 +104,6 @@ function renderProducts() {
 }
 
 
-/* ===========================
-   PAGINATION
-=========================== */
 function updatePagination() {
     const totalPages = Math.ceil(filteredProducts.length / perPage);
     pageInfo.textContent = `Pagina ${currentPage} di ${totalPages}`;
@@ -148,9 +128,6 @@ if (nextPage) {
 }
 
 
-/* ===========================
-   CART
-=========================== */
 function toggleCart(id) {
     const existing = cart.find(c => c.id === id);
 
@@ -214,9 +191,6 @@ function saveCart() {
 }
 
 
-/* ===========================
-   FAVOURITES
-=========================== */
 function toggleFavourite(id) {
     if (favourites.includes(id)) {
         favourites = favourites.filter(f => f !== id);
@@ -254,23 +228,14 @@ function renderFavourites() {
 }
 
 
-/* ===========================
-   COUNTERS
-=========================== */
 function updateCounters() {
     if (cartCount) cartCount.textContent = cart.length;
     if (favCount) favCount.textContent = favourites.length;
 }
 
 
-/* ===========================
-   EVENTS
-=========================== */
 if (searchInput) searchInput.addEventListener("input", applyFilters);
 if (categoryFilter) categoryFilter.addEventListener("change", applyFilters);
 
 
-/* ===========================
-   INIT
-=========================== */
 loadProducts();
