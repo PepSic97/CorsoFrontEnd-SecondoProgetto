@@ -99,3 +99,13 @@ button:hover {
     padding: 5px;
     font-size: 18px;
 }
+
+@media (max-width: 800px) {
+  .cart-sidebar { width: 200px; right: 12px; }
+  body { padding-right: 220px; }
+}
+
+@media (max-width: 520px) {
+  .cart-sidebar { display: none; }
+  body { padding-right: 20px; }
+}
