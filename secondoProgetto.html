@@ -2,10 +2,37 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secondo progetto</title>
+    <title>Prodotti</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+<header>
+    <h1>Secondo Progetto</h1>
+
+    <nav>
+        <a href="carrello.html">Carrello (<span id="cartCount">0</span>)</a>
+        <a href="preferiti.html">Preferiti (<span id="favCount">0</span>)</a>
+    </nav>
+</header>
+
+<div class="filters">
+    <input type="text" id="searchInput" placeholder="Cerca prodotto...">
     
+    <select id="categoryFilter">
+        <option value="">Tutte le categorie</option>
+    </select>
+</div>
+
+<div id="productList" class="grid"></div>
+
+<div class="pagination">
+    <button id="prevPage">◀</button>
+    <span id="pageInfo"></span>
+    <button id="nextPage">▶</button>
+</div>
+
+<script type="module" src="/script.js"></script>
 </body>
 </html>
